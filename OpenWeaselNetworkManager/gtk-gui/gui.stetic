@@ -35,6 +35,33 @@
         <property name="Label" translatable="yes">Save</property>
         <property name="ShortLabel" translatable="yes">Save</property>
       </action>
+      <action id="SupportAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Support</property>
+        <property name="ShortLabel" translatable="yes">Support</property>
+      </action>
+      <action id="CheckForUpdateAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Check for Update</property>
+        <property name="ShortLabel" translatable="yes">Check for Update</property>
+      </action>
+      <action id="AboutAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">About</property>
+        <property name="ShortLabel" translatable="yes">About</property>
+      </action>
+      <action id="ExitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit</property>
+        <property name="ShortLabel" translatable="yes">Exit</property>
+      </action>
+      <action id="TerminalAction">
+        <property name="Type">Toggle</property>
+        <property name="Label" translatable="yes">Terminal</property>
+        <property name="ShortLabel" translatable="yes">Terminal</property>
+        <property name="DrawAsRadio">False</property>
+        <property name="Active">False</property>
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">OpenWeasel Update Manager</property>
@@ -386,9 +413,16 @@
             <node name="MenuBar" type="Menubar">
               <node type="Menu" action="FileAction">
                 <node type="Menuitem" action="SaveAction" />
+                <node type="Menuitem" action="CheckForUpdateAction" />
+                <node type="Menuitem" action="AboutAction" />
+                <node type="Menuitem" action="ExitAction" />
               </node>
-              <node type="Menu" action="ViewAction" />
-              <node type="Menu" action="HelpAction" />
+              <node type="Menu" action="ViewAction">
+                <node type="Menuitem" action="TerminalAction" />
+              </node>
+              <node type="Menu" action="HelpAction">
+                <node type="Menuitem" action="SupportAction" />
+              </node>
             </node>
           </widget>
         </child>
