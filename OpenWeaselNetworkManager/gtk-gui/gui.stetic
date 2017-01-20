@@ -289,6 +289,15 @@
                     <property name="Y">455</property>
                   </packing>
                 </child>
+                <child>
+                  <widget class="Gtk.FileChooserButton" id="filechooserbutton1">
+                    <property name="MemberName" />
+                  </widget>
+                  <packing>
+                    <property name="X">657</property>
+                    <property name="Y">49</property>
+                  </packing>
+                </child>
               </widget>
             </child>
             <child>
