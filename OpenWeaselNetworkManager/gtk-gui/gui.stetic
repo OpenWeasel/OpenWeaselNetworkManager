@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.12</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Debug/OpenWeaselNetworkManager.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="800 590">
+    <action-group name="Default">
+      <action id="UpdateManagerAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Update Manager</property>
+        <property name="ShortLabel" translatable="yes">Update Manager</property>
+      </action>
+      <action id="FileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">File</property>
+        <property name="ShortLabel" translatable="yes">File</property>
+      </action>
+      <action id="ViewAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">View</property>
+        <property name="ShortLabel" translatable="yes">View</property>
+      </action>
+      <action id="HelpAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Help</property>
+        <property name="ShortLabel" translatable="yes">Help</property>
+      </action>
+      <action id="SaveAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Save</property>
+        <property name="ShortLabel" translatable="yes">Save</property>
+      </action>
+    </action-group>
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">OpenWeasel Update Manager</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="WidthRequest">800</property>
+        <property name="HeightRequest">590</property>
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Notebook" id="networkmanagernotebook">
+            <property name="MemberName" />
+            <property name="WidthRequest">800</property>
+            <property name="HeightRequest">567</property>
+            <property name="CanFocus">True</property>
+            <property name="CurrentPage">0</property>
+            <child>
+              <widget class="Gtk.Fixed" id="networkmanagerFix">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+                <child>
+                  <widget class="Gtk.Label" id="newmachinelbl">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">New Machine</property>
+                  </widget>
+                  <packing>
+                    <property name="X">24</property>
+                    <property name="Y">415</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="newMachine">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">●</property>
+                  </widget>
+                  <packing>
+                    <property name="X">22</property>
+                    <property name="Y">429</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="addnewcomputer">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">47</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Add</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">135</property>
+                    <property name="Y">455</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="hostselect">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Select a Host</property>
+                  </widget>
+                  <packing>
+                    <property name="X">18</property>
+                    <property name="Y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.ComboBox" id="combobox1">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">157</property>
+                    <property name="IsTextCombo">True</property>
+                    <property name="Items" translatable="yes" />
+                  </widget>
+                  <packing>
+                    <property name="X">11</property>
+                    <property name="Y">34</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="hostPasswordLbl">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Host Password</property>
+                  </widget>
+                  <packing>
+                    <property name="X">20</property>
+                    <property name="Y">69</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="hostpasswordEntry">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="Visibility">False</property>
+                    <property name="InvisibleChar">●</property>
+                  </widget>
+                  <packing>
+                    <property name="X">10</property>
+                    <property name="Y">85</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="setPasswdbt">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Set Password</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">93</property>
+                    <property name="Y">113</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="resetPasswd">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Reset</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">9</property>
+                    <property name="Y">113</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="sshButton">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">170</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Launch SSH</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">6</property>
+                    <property name="Y">182</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="pingButton">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">170</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Ping</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">6</property>
+                    <property name="Y">158</property>
+                  </packing>
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <placeholder />
+                </child>
+                <child>
+                  <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                    <property name="MemberName" />
+                    <property name="VscrollbarPolicy">Always</property>
+                    <property name="HscrollbarPolicy">Always</property>
+                    <property name="ShadowType">In</property>
+                    <child>
+                      <widget class="Gtk.TextView" id="textarea">
+                        <property name="MemberName" />
+                        <property name="WidthRequest">270</property>
+                        <property name="HeightRequest">374</property>
+                        <property name="CanFocus">True</property>
+                        <property name="ShowScrollbars">True</property>
+                        <property name="Text" translatable="yes" />
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="X">198</property>
+                    <property name="Y">62</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label4">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Issues and Changes Log</property>
+                  </widget>
+                  <packing>
+                    <property name="X">259</property>
+                    <property name="Y">20</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="TitleLb">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Title</property>
+                  </widget>
+                  <packing>
+                    <property name="X">202</property>
+                    <property name="Y">41</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Entry" id="titleEntry">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="IsEditable">True</property>
+                    <property name="InvisibleChar">●</property>
+                  </widget>
+                  <packing>
+                    <property name="X">223</property>
+                    <property name="Y">36</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.HSeparator" id="hseparator1">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">760</property>
+                  </widget>
+                  <packing>
+                    <property name="X">1</property>
+                    <property name="Y">512</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="networkApplyBT">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">100</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Apply</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">682</property>
+                    <property name="Y">484</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Button" id="saveLogBT">
+                    <property name="MemberName" />
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Save Log</property>
+                    <property name="UseUnderline">True</property>
+                  </widget>
+                  <packing>
+                    <property name="X">418</property>
+                    <property name="Y">455</property>
+                  </packing>
+                </child>
+              </widget>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="NetworkComputerTab">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Network Manager</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Fixed" id="fixed2">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="label1">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Network Map</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Fixed" id="updatemanagerFix">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="updatemanagertab">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Update Manager</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Fixed" id="virusscannerFix">
+                <property name="MemberName" />
+                <property name="HasWindow">False</property>
+              </widget>
+              <packing>
+                <property name="Position">3</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="VirusScannerTab">
+                <property name="MemberName" />
+                <property name="LabelProp" translatable="yes">Virus Scanner</property>
+              </widget>
+              <packing>
+                <property name="type">tab</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Y">22</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.MenuBar" id="MenuBar">
+            <property name="MemberName" />
+            <property name="WidthRequest">800</property>
+            <node name="MenuBar" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="SaveAction" />
+              </node>
+              <node type="Menu" action="ViewAction" />
+              <node type="Menu" action="HelpAction" />
+            </node>
+          </widget>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
