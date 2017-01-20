@@ -14,7 +14,6 @@ public partial class MainWindow
 	private global::Gtk.Fixed networkmanagerFix;
 	private global::Gtk.Label newmachinelbl;
 	private global::Gtk.Entry newMachine;
-	private global::Gtk.Button addnewcomputer;
 	private global::Gtk.Label hostselect;
 	private global::Gtk.ComboBox combobox1;
 	private global::Gtk.Label hostPasswordLbl;
@@ -31,7 +30,9 @@ public partial class MainWindow
 	private global::Gtk.HSeparator hseparator1;
 	private global::Gtk.Button networkApplyBT;
 	private global::Gtk.Button saveLogBT;
+	private global::Gtk.Button addnewcomputer;
 	private global::Gtk.FileChooserButton filechooserbutton1;
+	private global::Gtk.Label openLogLbl;
 	private global::Gtk.Label NetworkComputerTab;
 	private global::Gtk.Fixed fixed2;
 	private global::Gtk.Label label1;
@@ -91,7 +92,7 @@ public partial class MainWindow
 		this.networkmanagerFix.Add (this.newmachinelbl);
 		global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.newmachinelbl]));
 		w2.X = 24;
-		w2.Y = 415;
+		w2.Y = 254;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.newMachine = new global::Gtk.Entry ();
 		this.newMachine.CanFocus = true;
@@ -100,43 +101,32 @@ public partial class MainWindow
 		this.newMachine.InvisibleChar = '●';
 		this.networkmanagerFix.Add (this.newMachine);
 		global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.newMachine]));
-		w3.X = 22;
-		w3.Y = 429;
-		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
-		this.addnewcomputer = new global::Gtk.Button ();
-		this.addnewcomputer.WidthRequest = 47;
-		this.addnewcomputer.CanFocus = true;
-		this.addnewcomputer.Name = "addnewcomputer";
-		this.addnewcomputer.UseUnderline = true;
-		this.addnewcomputer.Label = global::Mono.Unix.Catalog.GetString ("Add");
-		this.networkmanagerFix.Add (this.addnewcomputer);
-		global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.addnewcomputer]));
-		w4.X = 135;
-		w4.Y = 455;
+		w3.X = 10;
+		w3.Y = 270;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.hostselect = new global::Gtk.Label ();
 		this.hostselect.Name = "hostselect";
 		this.hostselect.LabelProp = global::Mono.Unix.Catalog.GetString ("Select a Host");
 		this.networkmanagerFix.Add (this.hostselect);
-		global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.hostselect]));
-		w5.X = 18;
-		w5.Y = 20;
+		global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.hostselect]));
+		w4.X = 18;
+		w4.Y = 20;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.combobox1 = global::Gtk.ComboBox.NewText ();
 		this.combobox1.WidthRequest = 157;
 		this.combobox1.Name = "combobox1";
 		this.networkmanagerFix.Add (this.combobox1);
-		global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.combobox1]));
-		w6.X = 11;
-		w6.Y = 34;
+		global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.combobox1]));
+		w5.X = 11;
+		w5.Y = 34;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.hostPasswordLbl = new global::Gtk.Label ();
 		this.hostPasswordLbl.Name = "hostPasswordLbl";
 		this.hostPasswordLbl.LabelProp = global::Mono.Unix.Catalog.GetString ("Host Password");
 		this.networkmanagerFix.Add (this.hostPasswordLbl);
-		global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.hostPasswordLbl]));
-		w7.X = 20;
-		w7.Y = 69;
+		global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.hostPasswordLbl]));
+		w6.X = 20;
+		w6.Y = 69;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.hostpasswordEntry = new global::Gtk.Entry ();
 		this.hostpasswordEntry.CanFocus = true;
@@ -145,9 +135,9 @@ public partial class MainWindow
 		this.hostpasswordEntry.Visibility = false;
 		this.hostpasswordEntry.InvisibleChar = '●';
 		this.networkmanagerFix.Add (this.hostpasswordEntry);
-		global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.hostpasswordEntry]));
-		w8.X = 10;
-		w8.Y = 85;
+		global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.hostpasswordEntry]));
+		w7.X = 10;
+		w7.Y = 85;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.setPasswdbt = new global::Gtk.Button ();
 		this.setPasswdbt.CanFocus = true;
@@ -155,9 +145,9 @@ public partial class MainWindow
 		this.setPasswdbt.UseUnderline = true;
 		this.setPasswdbt.Label = global::Mono.Unix.Catalog.GetString ("Set Password");
 		this.networkmanagerFix.Add (this.setPasswdbt);
-		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.setPasswdbt]));
-		w9.X = 93;
-		w9.Y = 113;
+		global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.setPasswdbt]));
+		w8.X = 93;
+		w8.Y = 113;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.resetPasswd = new global::Gtk.Button ();
 		this.resetPasswd.CanFocus = true;
@@ -165,9 +155,9 @@ public partial class MainWindow
 		this.resetPasswd.UseUnderline = true;
 		this.resetPasswd.Label = global::Mono.Unix.Catalog.GetString ("Reset");
 		this.networkmanagerFix.Add (this.resetPasswd);
-		global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.resetPasswd]));
-		w10.X = 9;
-		w10.Y = 113;
+		global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.resetPasswd]));
+		w9.X = 9;
+		w9.Y = 113;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.sshButton = new global::Gtk.Button ();
 		this.sshButton.WidthRequest = 170;
@@ -176,9 +166,9 @@ public partial class MainWindow
 		this.sshButton.UseUnderline = true;
 		this.sshButton.Label = global::Mono.Unix.Catalog.GetString ("Launch SSH");
 		this.networkmanagerFix.Add (this.sshButton);
-		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.sshButton]));
-		w11.X = 6;
-		w11.Y = 182;
+		global::Gtk.Fixed.FixedChild w10 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.sshButton]));
+		w10.X = 6;
+		w10.Y = 182;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.pingButton = new global::Gtk.Button ();
 		this.pingButton.WidthRequest = 170;
@@ -187,9 +177,9 @@ public partial class MainWindow
 		this.pingButton.UseUnderline = true;
 		this.pingButton.Label = global::Mono.Unix.Catalog.GetString ("Ping");
 		this.networkmanagerFix.Add (this.pingButton);
-		global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.pingButton]));
-		w12.X = 6;
-		w12.Y = 158;
+		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.pingButton]));
+		w11.X = 6;
+		w11.Y = 158;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
 		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
@@ -204,25 +194,25 @@ public partial class MainWindow
 		this.textarea.Name = "textarea";
 		this.GtkScrolledWindow.Add (this.textarea);
 		this.networkmanagerFix.Add (this.GtkScrolledWindow);
-		global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.GtkScrolledWindow]));
-		w14.X = 198;
-		w14.Y = 62;
+		global::Gtk.Fixed.FixedChild w13 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.GtkScrolledWindow]));
+		w13.X = 198;
+		w13.Y = 62;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.label4 = new global::Gtk.Label ();
 		this.label4.Name = "label4";
 		this.label4.LabelProp = global::Mono.Unix.Catalog.GetString ("Issues and Changes Log");
 		this.networkmanagerFix.Add (this.label4);
-		global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.label4]));
-		w15.X = 259;
-		w15.Y = 20;
+		global::Gtk.Fixed.FixedChild w14 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.label4]));
+		w14.X = 259;
+		w14.Y = 20;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.TitleLb = new global::Gtk.Label ();
 		this.TitleLb.Name = "TitleLb";
 		this.TitleLb.LabelProp = global::Mono.Unix.Catalog.GetString ("Title");
 		this.networkmanagerFix.Add (this.TitleLb);
-		global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.TitleLb]));
-		w16.X = 202;
-		w16.Y = 41;
+		global::Gtk.Fixed.FixedChild w15 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.TitleLb]));
+		w15.X = 200;
+		w15.Y = 41;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.titleEntry = new global::Gtk.Entry ();
 		this.titleEntry.CanFocus = true;
@@ -230,17 +220,17 @@ public partial class MainWindow
 		this.titleEntry.IsEditable = true;
 		this.titleEntry.InvisibleChar = '●';
 		this.networkmanagerFix.Add (this.titleEntry);
-		global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.titleEntry]));
-		w17.X = 223;
-		w17.Y = 36;
+		global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.titleEntry]));
+		w16.X = 223;
+		w16.Y = 36;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.hseparator1 = new global::Gtk.HSeparator ();
 		this.hseparator1.WidthRequest = 760;
 		this.hseparator1.Name = "hseparator1";
 		this.networkmanagerFix.Add (this.hseparator1);
-		global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.hseparator1]));
-		w18.X = 1;
-		w18.Y = 512;
+		global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.hseparator1]));
+		w17.X = 1;
+		w17.Y = 512;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.networkApplyBT = new global::Gtk.Button ();
 		this.networkApplyBT.WidthRequest = 100;
@@ -249,9 +239,9 @@ public partial class MainWindow
 		this.networkApplyBT.UseUnderline = true;
 		this.networkApplyBT.Label = global::Mono.Unix.Catalog.GetString ("Apply");
 		this.networkmanagerFix.Add (this.networkApplyBT);
-		global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.networkApplyBT]));
-		w19.X = 682;
-		w19.Y = 484;
+		global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.networkApplyBT]));
+		w18.X = 682;
+		w18.Y = 484;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.saveLogBT = new global::Gtk.Button ();
 		this.saveLogBT.CanFocus = true;
@@ -259,16 +249,36 @@ public partial class MainWindow
 		this.saveLogBT.UseUnderline = true;
 		this.saveLogBT.Label = global::Mono.Unix.Catalog.GetString ("Save Log");
 		this.networkmanagerFix.Add (this.saveLogBT);
-		global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.saveLogBT]));
-		w20.X = 418;
-		w20.Y = 455;
+		global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.saveLogBT]));
+		w19.X = 418;
+		w19.Y = 455;
+		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
+		this.addnewcomputer = new global::Gtk.Button ();
+		this.addnewcomputer.WidthRequest = 47;
+		this.addnewcomputer.CanFocus = true;
+		this.addnewcomputer.Name = "addnewcomputer";
+		this.addnewcomputer.UseUnderline = true;
+		this.addnewcomputer.Label = global::Mono.Unix.Catalog.GetString ("Add");
+		this.networkmanagerFix.Add (this.addnewcomputer);
+		global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.addnewcomputer]));
+		w20.X = 122;
+		w20.Y = 301;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
 		this.filechooserbutton1 = new global::Gtk.FileChooserButton (global::Mono.Unix.Catalog.GetString ("Select a File"), ((global::Gtk.FileChooserAction)(0)));
+		this.filechooserbutton1.WidthRequest = 163;
 		this.filechooserbutton1.Name = "filechooserbutton1";
 		this.networkmanagerFix.Add (this.filechooserbutton1);
 		global::Gtk.Fixed.FixedChild w21 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.filechooserbutton1]));
-		w21.X = 657;
-		w21.Y = 49;
+		w21.X = 601;
+		w21.Y = 35;
+		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
+		this.openLogLbl = new global::Gtk.Label ();
+		this.openLogLbl.Name = "openLogLbl";
+		this.openLogLbl.LabelProp = global::Mono.Unix.Catalog.GetString ("Open Log");
+		this.networkmanagerFix.Add (this.openLogLbl);
+		global::Gtk.Fixed.FixedChild w22 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.openLogLbl]));
+		w22.X = 615;
+		w22.Y = 20;
 		this.networkmanagernotebook.Add (this.networkmanagerFix);
 		// Notebook tab
 		this.NetworkComputerTab = new global::Gtk.Label ();
@@ -281,8 +291,8 @@ public partial class MainWindow
 		this.fixed2.Name = "fixed2";
 		this.fixed2.HasWindow = false;
 		this.networkmanagernotebook.Add (this.fixed2);
-		global::Gtk.Notebook.NotebookChild w23 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.fixed2]));
-		w23.Position = 1;
+		global::Gtk.Notebook.NotebookChild w24 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.fixed2]));
+		w24.Position = 1;
 		// Notebook tab
 		this.label1 = new global::Gtk.Label ();
 		this.label1.Name = "label1";
@@ -294,8 +304,8 @@ public partial class MainWindow
 		this.updatemanagerFix.Name = "updatemanagerFix";
 		this.updatemanagerFix.HasWindow = false;
 		this.networkmanagernotebook.Add (this.updatemanagerFix);
-		global::Gtk.Notebook.NotebookChild w24 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.updatemanagerFix]));
-		w24.Position = 2;
+		global::Gtk.Notebook.NotebookChild w25 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.updatemanagerFix]));
+		w25.Position = 2;
 		// Notebook tab
 		this.updatemanagertab = new global::Gtk.Label ();
 		this.updatemanagertab.Name = "updatemanagertab";
@@ -307,8 +317,8 @@ public partial class MainWindow
 		this.virusscannerFix.Name = "virusscannerFix";
 		this.virusscannerFix.HasWindow = false;
 		this.networkmanagernotebook.Add (this.virusscannerFix);
-		global::Gtk.Notebook.NotebookChild w25 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.virusscannerFix]));
-		w25.Position = 3;
+		global::Gtk.Notebook.NotebookChild w26 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.virusscannerFix]));
+		w26.Position = 3;
 		// Notebook tab
 		this.VirusScannerTab = new global::Gtk.Label ();
 		this.VirusScannerTab.Name = "VirusScannerTab";
@@ -316,8 +326,8 @@ public partial class MainWindow
 		this.networkmanagernotebook.SetTabLabel (this.virusscannerFix, this.VirusScannerTab);
 		this.VirusScannerTab.ShowAll ();
 		this.fixed1.Add (this.networkmanagernotebook);
-		global::Gtk.Fixed.FixedChild w26 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.networkmanagernotebook]));
-		w26.Y = 22;
+		global::Gtk.Fixed.FixedChild w27 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.networkmanagernotebook]));
+		w27.Y = 22;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.UIManager.AddUiFromString ("<ui><menubar name='MenuBar'><menu name='FileAction' action='FileAction'><menuitem name='SaveAction' action='SaveAction'/></menu><menu name='ViewAction' action='ViewAction'/><menu name='HelpAction' action='HelpAction'/></menubar></ui>");
 		this.MenuBar = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/MenuBar")));

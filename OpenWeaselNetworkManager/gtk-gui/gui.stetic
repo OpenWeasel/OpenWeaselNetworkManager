@@ -64,7 +64,7 @@
                   </widget>
                   <packing>
                     <property name="X">24</property>
-                    <property name="Y">415</property>
+                    <property name="Y">254</property>
                   </packing>
                 </child>
                 <child>
@@ -75,22 +75,8 @@
                     <property name="InvisibleChar">●</property>
                   </widget>
                   <packing>
-                    <property name="X">22</property>
-                    <property name="Y">429</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Button" id="addnewcomputer">
-                    <property name="MemberName" />
-                    <property name="WidthRequest">47</property>
-                    <property name="CanFocus">True</property>
-                    <property name="Type">TextOnly</property>
-                    <property name="Label" translatable="yes">Add</property>
-                    <property name="UseUnderline">True</property>
-                  </widget>
-                  <packing>
-                    <property name="X">135</property>
-                    <property name="Y">455</property>
+                    <property name="X">10</property>
+                    <property name="Y">270</property>
                   </packing>
                 </child>
                 <child>
@@ -236,7 +222,7 @@
                     <property name="LabelProp" translatable="yes">Title</property>
                   </widget>
                   <packing>
-                    <property name="X">202</property>
+                    <property name="X">200</property>
                     <property name="Y">41</property>
                   </packing>
                 </child>
@@ -290,12 +276,37 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.FileChooserButton" id="filechooserbutton1">
+                  <widget class="Gtk.Button" id="addnewcomputer">
                     <property name="MemberName" />
+                    <property name="WidthRequest">47</property>
+                    <property name="CanFocus">True</property>
+                    <property name="Type">TextOnly</property>
+                    <property name="Label" translatable="yes">Add</property>
+                    <property name="UseUnderline">True</property>
                   </widget>
                   <packing>
-                    <property name="X">657</property>
-                    <property name="Y">49</property>
+                    <property name="X">122</property>
+                    <property name="Y">301</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.FileChooserButton" id="filechooserbutton1">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">163</property>
+                  </widget>
+                  <packing>
+                    <property name="X">601</property>
+                    <property name="Y">35</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="openLogLbl">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Open Log</property>
+                  </widget>
+                  <packing>
+                    <property name="X">615</property>
+                    <property name="Y">20</property>
                   </packing>
                 </child>
               </widget>

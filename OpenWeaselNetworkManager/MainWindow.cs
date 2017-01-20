@@ -23,6 +23,9 @@ public partial class MainWindow: Gtk.Window
 		}
 
 
+		//filechooserbutton1.SetCurrentFolder(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
+		filechooserbutton1.SetCurrentFolder("/");
+
 
 
 	/*
