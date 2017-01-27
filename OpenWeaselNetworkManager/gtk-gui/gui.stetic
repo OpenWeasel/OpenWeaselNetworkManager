@@ -32,7 +32,7 @@
             <property name="WidthRequest">800</property>
             <property name="HeightRequest">567</property>
             <property name="CanFocus">True</property>
-            <property name="CurrentPage">2</property>
+            <property name="CurrentPage">0</property>
             <child>
               <widget class="Gtk.Fixed" id="networkmanagerFix">
                 <property name="MemberName" />
@@ -48,7 +48,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Entry" id="newMachine">
+                  <widget class="Gtk.Entry" id="entryNewMachine">
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="IsEditable">True</property>
@@ -70,7 +70,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.ComboBox" id="combobox1">
+                  <widget class="Gtk.ComboBox" id="comboboxSelectHost">
                     <property name="MemberName" />
                     <property name="WidthRequest">157</property>
                     <property name="IsTextCombo">True</property>
@@ -131,10 +131,11 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="sshButton">
+                  <widget class="Gtk.Button" id="btSSH">
                     <property name="MemberName" />
                     <property name="WidthRequest">170</property>
                     <property name="CanFocus">True</property>
+                    <property name="Events">ButtonPressMask</property>
                     <property name="Type">TextOnly</property>
                     <property name="Label" translatable="yes">Launch SSH</property>
                     <property name="UseUnderline">True</property>
@@ -166,60 +167,6 @@
                   <placeholder />
                 </child>
                 <child>
-                  <widget class="Gtk.ScrolledWindow" id="logScrollScreen">
-                    <property name="MemberName" />
-                    <property name="VscrollbarPolicy">Always</property>
-                    <property name="HscrollbarPolicy">Always</property>
-                    <property name="ShadowType">In</property>
-                    <child>
-                      <widget class="Gtk.TextView" id="textarea">
-                        <property name="MemberName" />
-                        <property name="WidthRequest">270</property>
-                        <property name="HeightRequest">374</property>
-                        <property name="CanFocus">True</property>
-                        <property name="ShowScrollbars">True</property>
-                        <property name="Text" translatable="yes" />
-                      </widget>
-                    </child>
-                  </widget>
-                  <packing>
-                    <property name="X">499</property>
-                    <property name="Y">62</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Label" id="label4">
-                    <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">Issues and Changes Log</property>
-                  </widget>
-                  <packing>
-                    <property name="X">503</property>
-                    <property name="Y">16</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Label" id="TitleLb">
-                    <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">Title</property>
-                  </widget>
-                  <packing>
-                    <property name="X">503</property>
-                    <property name="Y">41</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Entry" id="titleEntry">
-                    <property name="MemberName" />
-                    <property name="CanFocus">True</property>
-                    <property name="IsEditable">True</property>
-                    <property name="InvisibleChar">●</property>
-                  </widget>
-                  <packing>
-                    <property name="X">532</property>
-                    <property name="Y">36</property>
-                  </packing>
-                </child>
-                <child>
                   <widget class="Gtk.HSeparator" id="hseparator1">
                     <property name="MemberName" />
                     <property name="WidthRequest">760</property>
@@ -227,19 +174,6 @@
                   <packing>
                     <property name="X">1</property>
                     <property name="Y">512</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Button" id="saveLogBT">
-                    <property name="MemberName" />
-                    <property name="CanFocus">True</property>
-                    <property name="Type">TextOnly</property>
-                    <property name="Label" translatable="yes">Save Log</property>
-                    <property name="UseUnderline">True</property>
-                  </widget>
-                  <packing>
-                    <property name="X">501</property>
-                    <property name="Y">455</property>
                   </packing>
                 </child>
                 <child>
@@ -257,36 +191,16 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.FileChooserButton" id="filechooserbutton1">
-                    <property name="MemberName" />
-                    <property name="WidthRequest">85</property>
-                  </widget>
-                  <packing>
-                    <property name="X">668</property>
-                    <property name="Y">455</property>
-                  </packing>
-                </child>
-                <child>
-                  <widget class="Gtk.Label" id="openLogLbl">
-                    <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">Open Log</property>
-                  </widget>
-                  <packing>
-                    <property name="X">607</property>
-                    <property name="Y">461</property>
-                  </packing>
-                </child>
-                <child>
                   <placeholder />
                 </child>
                 <child>
                   <widget class="Gtk.ScrolledWindow" id="consoleOutput">
                     <property name="MemberName" />
-                    <property name="WidthRequest">162</property>
+                    <property name="WidthRequest">777</property>
                     <property name="HeightRequest">141</property>
                     <property name="ShadowType">In</property>
                     <child>
-                      <widget class="Gtk.TextView" id="textview2">
+                      <widget class="Gtk.TextView" id="textviewConsoleOutput">
                         <property name="MemberName" />
                         <property name="CanFocus">True</property>
                         <property name="ShowScrollbars">True</property>
@@ -350,6 +264,17 @@
                   <packing>
                     <property name="X">27</property>
                     <property name="Y">29</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.ComboBoxEntry" id="comboPackagesForUpdate">
+                    <property name="MemberName" />
+                    <property name="IsTextCombo">True</property>
+                    <property name="Items" translatable="yes" />
+                  </widget>
+                  <packing>
+                    <property name="X">22</property>
+                    <property name="Y">45</property>
                   </packing>
                 </child>
               </widget>
