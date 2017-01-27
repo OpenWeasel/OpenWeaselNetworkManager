@@ -32,7 +32,7 @@
             <property name="WidthRequest">800</property>
             <property name="HeightRequest">567</property>
             <property name="CanFocus">True</property>
-            <property name="CurrentPage">0</property>
+            <property name="CurrentPage">2</property>
             <child>
               <widget class="Gtk.Fixed" id="networkmanagerFix">
                 <property name="MemberName" />
@@ -342,6 +342,16 @@
               <widget class="Gtk.Fixed" id="updatemanagerFix">
                 <property name="MemberName" />
                 <property name="HasWindow">False</property>
+                <child>
+                  <widget class="Gtk.Label" id="labelPackages">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Packages</property>
+                  </widget>
+                  <packing>
+                    <property name="X">27</property>
+                    <property name="Y">29</property>
+                  </packing>
+                </child>
               </widget>
               <packing>
                 <property name="Position">2</property>
