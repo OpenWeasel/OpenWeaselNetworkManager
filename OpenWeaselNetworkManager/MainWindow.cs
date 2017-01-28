@@ -3,6 +3,7 @@ using Gtk;
 using System.IO;
 using System.Text;
 using System.Diagnostics;
+using System.Threading;
 using System.Windows.Forms;
 
 public partial class MainWindow: Gtk.Window
@@ -34,7 +35,7 @@ public partial class MainWindow: Gtk.Window
 
 
 
-
+		static StringBuilder sortOutput = null;
 
 
 
@@ -47,8 +48,39 @@ public partial class MainWindow: Gtk.Window
 	*/
 	}
 
+
+
 	void btSSH_click (object obj, EventArgs args)
 	{
+
+		System.Diagnostics.Process procSSH = new System.Diagnostics.Process ();
+		procSSH.EnableRaisingEvents = false;
+		//procSSH.StartInfo.FileName = "sshpass";
+		procSSH.StartInfo.FileName = "ifconfig";
+		procSSH.StartInfo.UseShellExecute = false;
+		procSSH.StartInfo.RedirectStandardOutput = true;
+		//procSSH.StartInfo.Arguments = "-p password ssh -o StrictHostKeyChecking=no warlock@jamesweasel";
+
+		sortOutput = new StringBuilder("");
+
+		procSSH.Start();
+		procSSH.BeginOutputReadLine();
+
+
+	
+		/*
+		string dataSSH = procSSH.StandardOutput.ReadToEnd();
+		Console.WriteLine(dataSSH);
+		*/
+		//textviewConsoleOutput.Buffer.Text = dataSSH;
+
+	//	textviewConsoleOutput.Buffer.Text = procSSH.BeginOutputReadLine;
+
+
+
+
+		//great code for ping
+		/*
 	
 		System.Diagnostics.Process proc = new System.Diagnostics.Process ();
 		proc.EnableRaisingEvents = false;
@@ -61,6 +93,14 @@ public partial class MainWindow: Gtk.Window
 		string data = proc.StandardOutput.ReadToEnd();
 		Console.WriteLine(data);
 		textviewConsoleOutput.Buffer.Text = data;
+
+
+		*/
+
+
+
+
+
 		/*
 		proc.StartInfo.RedirectStandardOutput = true;
 		proc.StartInfo.UseShellExecute = false;
@@ -79,6 +119,7 @@ public partial class MainWindow: Gtk.Window
 		//string data = proc.StandardOutput.ReadToEnd();
 		//Console.WriteLine(data + " was returned");
 	}
+
 	
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
 	{

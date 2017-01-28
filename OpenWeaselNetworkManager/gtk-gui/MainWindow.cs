@@ -23,6 +23,9 @@ public partial class MainWindow
 	private global::Gtk.ScrolledWindow consoleOutput;
 	private global::Gtk.TextView textviewConsoleOutput;
 	private global::Gtk.Label consoleOutput1;
+	private global::Gtk.ScrolledWindow textviewConsoleInput;
+	private global::Gtk.TextView textview1;
+	private global::Gtk.Label labelConsoleInput;
 	private global::Gtk.Label NetworkComputerTab;
 	private global::Gtk.Fixed fixed2;
 	private global::Gtk.Label label1;
@@ -204,6 +207,29 @@ public partial class MainWindow
 		global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.consoleOutput1]));
 		w16.X = 14;
 		w16.Y = 340;
+		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
+		this.textviewConsoleInput = new global::Gtk.ScrolledWindow ();
+		this.textviewConsoleInput.WidthRequest = 570;
+		this.textviewConsoleInput.HeightRequest = 271;
+		this.textviewConsoleInput.Name = "textviewConsoleInput";
+		this.textviewConsoleInput.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child textviewConsoleInput.Gtk.Container+ContainerChild
+		this.textview1 = new global::Gtk.TextView ();
+		this.textview1.CanFocus = true;
+		this.textview1.Name = "textview1";
+		this.textviewConsoleInput.Add (this.textview1);
+		this.networkmanagerFix.Add (this.textviewConsoleInput);
+		global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.textviewConsoleInput]));
+		w18.X = 215;
+		w18.Y = 38;
+		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
+		this.labelConsoleInput = new global::Gtk.Label ();
+		this.labelConsoleInput.Name = "labelConsoleInput";
+		this.labelConsoleInput.LabelProp = global::Mono.Unix.Catalog.GetString ("SSH Console");
+		this.networkmanagerFix.Add (this.labelConsoleInput);
+		global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.labelConsoleInput]));
+		w19.X = 457;
+		w19.Y = 20;
 		this.networkmanagernotebook.Add (this.networkmanagerFix);
 		// Notebook tab
 		this.NetworkComputerTab = new global::Gtk.Label ();
@@ -216,8 +242,8 @@ public partial class MainWindow
 		this.fixed2.Name = "fixed2";
 		this.fixed2.HasWindow = false;
 		this.networkmanagernotebook.Add (this.fixed2);
-		global::Gtk.Notebook.NotebookChild w18 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.fixed2]));
-		w18.Position = 1;
+		global::Gtk.Notebook.NotebookChild w21 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.fixed2]));
+		w21.Position = 1;
 		// Notebook tab
 		this.label1 = new global::Gtk.Label ();
 		this.label1.Name = "label1";
@@ -233,19 +259,19 @@ public partial class MainWindow
 		this.labelPackages.Name = "labelPackages";
 		this.labelPackages.LabelProp = global::Mono.Unix.Catalog.GetString ("Packages");
 		this.updatemanagerFix.Add (this.labelPackages);
-		global::Gtk.Fixed.FixedChild w19 = ((global::Gtk.Fixed.FixedChild)(this.updatemanagerFix [this.labelPackages]));
-		w19.X = 27;
-		w19.Y = 29;
+		global::Gtk.Fixed.FixedChild w22 = ((global::Gtk.Fixed.FixedChild)(this.updatemanagerFix [this.labelPackages]));
+		w22.X = 27;
+		w22.Y = 29;
 		// Container child updatemanagerFix.Gtk.Fixed+FixedChild
 		this.comboPackagesForUpdate = global::Gtk.ComboBoxEntry.NewText ();
 		this.comboPackagesForUpdate.Name = "comboPackagesForUpdate";
 		this.updatemanagerFix.Add (this.comboPackagesForUpdate);
-		global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.updatemanagerFix [this.comboPackagesForUpdate]));
-		w20.X = 22;
-		w20.Y = 45;
+		global::Gtk.Fixed.FixedChild w23 = ((global::Gtk.Fixed.FixedChild)(this.updatemanagerFix [this.comboPackagesForUpdate]));
+		w23.X = 22;
+		w23.Y = 45;
 		this.networkmanagernotebook.Add (this.updatemanagerFix);
-		global::Gtk.Notebook.NotebookChild w21 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.updatemanagerFix]));
-		w21.Position = 2;
+		global::Gtk.Notebook.NotebookChild w24 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.updatemanagerFix]));
+		w24.Position = 2;
 		// Notebook tab
 		this.updatemanagertab = new global::Gtk.Label ();
 		this.updatemanagertab.Name = "updatemanagertab";
@@ -257,8 +283,8 @@ public partial class MainWindow
 		this.virusscannerFix.Name = "virusscannerFix";
 		this.virusscannerFix.HasWindow = false;
 		this.networkmanagernotebook.Add (this.virusscannerFix);
-		global::Gtk.Notebook.NotebookChild w22 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.virusscannerFix]));
-		w22.Position = 3;
+		global::Gtk.Notebook.NotebookChild w25 = ((global::Gtk.Notebook.NotebookChild)(this.networkmanagernotebook [this.virusscannerFix]));
+		w25.Position = 3;
 		// Notebook tab
 		this.VirusScannerTab = new global::Gtk.Label ();
 		this.VirusScannerTab.Name = "VirusScannerTab";
@@ -266,8 +292,8 @@ public partial class MainWindow
 		this.networkmanagernotebook.SetTabLabel (this.virusscannerFix, this.VirusScannerTab);
 		this.VirusScannerTab.ShowAll ();
 		this.fixed1.Add (this.networkmanagernotebook);
-		global::Gtk.Fixed.FixedChild w23 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.networkmanagernotebook]));
-		w23.Y = 22;
+		global::Gtk.Fixed.FixedChild w26 = ((global::Gtk.Fixed.FixedChild)(this.fixed1 [this.networkmanagernotebook]));
+		w26.Y = 22;
 		// Container child fixed1.Gtk.Fixed+FixedChild
 		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'/></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));

@@ -223,6 +223,36 @@
                     <property name="Y">340</property>
                   </packing>
                 </child>
+                <child>
+                  <widget class="Gtk.ScrolledWindow" id="textviewConsoleInput">
+                    <property name="MemberName" />
+                    <property name="WidthRequest">570</property>
+                    <property name="HeightRequest">271</property>
+                    <property name="ShadowType">In</property>
+                    <child>
+                      <widget class="Gtk.TextView" id="textview1">
+                        <property name="MemberName" />
+                        <property name="CanFocus">True</property>
+                        <property name="ShowScrollbars">True</property>
+                        <property name="Text" translatable="yes" />
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="X">215</property>
+                    <property name="Y">38</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="labelConsoleInput">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">SSH Console</property>
+                  </widget>
+                  <packing>
+                    <property name="X">457</property>
+                    <property name="Y">20</property>
+                  </packing>
+                </child>
               </widget>
             </child>
             <child>
