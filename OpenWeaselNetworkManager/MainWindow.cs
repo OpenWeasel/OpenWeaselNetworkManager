@@ -1,3 +1,12 @@
+/*
+ * 
+ * Author James Houston
+ * Email houstonjamez.1@gmail.com
+ * Purpose of this program: To make updating and maintaining a weasel network simpler.
+ * To have all tools available with a click.
+ * To be able to troubleshoot problems that might come up.
+ * To maintain and updated, clean, sanitized, and backedup weasel network
+ */
 using System;
 using Gtk;
 using System.IO;
@@ -24,12 +33,15 @@ public partial class MainWindow: Gtk.Window
 		} catch (Exception ex) {
 		}
 
-
+		/*
+		 * old file chooser instance
+		 * kept in here for reference for the timebeing.
+		 * 
 		//filechooserbutton1.SetCurrentFolder(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
 		//filechooserbutton1.SetCurrentFolder("/openweasel/logs");
+		*/
 		btSSH.Clicked += btSSH_click;
 		btPing.Clicked += btPing_click;
-		Console.WriteLine("test");
 
 
 
@@ -48,7 +60,12 @@ public partial class MainWindow: Gtk.Window
 		}
 	*/
 	}
-
+	/*
+	 *Ping button method 
+	 *needs to import variable from host selection drop down
+	 *currently only pinging google
+	 *
+	*/
 	void btPing_click (object obj, EventArgs args)
 	{
 		System.Diagnostics.Process proc = new System.Diagnostics.Process ();
@@ -64,6 +81,13 @@ public partial class MainWindow: Gtk.Window
 		textviewConsoleOutput.Buffer.Text = data;
 
 	}
+	/*
+	 * This method is called after you press on the launch ssh session screen
+	 * goal is to have the SSH input screen be able to send ssh commands
+	 * currently this method is crashing after button click
+	 * may have to revert back to the ping method example
+	 * another solution is to have the button open up a terminal window
+	 */
 
 	void btSSH_click (object obj, EventArgs args)
 	{
