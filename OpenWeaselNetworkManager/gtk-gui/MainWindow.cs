@@ -17,7 +17,7 @@ public partial class MainWindow
 	private global::Gtk.Button setPasswdbt;
 	private global::Gtk.Button resetPasswd;
 	private global::Gtk.Button btSSH;
-	private global::Gtk.Button pingButton;
+	private global::Gtk.Button btPing;
 	private global::Gtk.HSeparator hseparator1;
 	private global::Gtk.Button addnewcomputer;
 	private global::Gtk.ScrolledWindow consoleOutput;
@@ -154,15 +154,15 @@ public partial class MainWindow
 		w10.X = 6;
 		w10.Y = 182;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild
-		this.pingButton = new global::Gtk.Button ();
-		this.pingButton.WidthRequest = 170;
-		this.pingButton.CanFocus = true;
-		this.pingButton.Events = ((global::Gdk.EventMask)(256));
-		this.pingButton.Name = "pingButton";
-		this.pingButton.UseUnderline = true;
-		this.pingButton.Label = global::Mono.Unix.Catalog.GetString ("Ping");
-		this.networkmanagerFix.Add (this.pingButton);
-		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.pingButton]));
+		this.btPing = new global::Gtk.Button ();
+		this.btPing.WidthRequest = 170;
+		this.btPing.CanFocus = true;
+		this.btPing.Events = ((global::Gdk.EventMask)(256));
+		this.btPing.Name = "btPing";
+		this.btPing.UseUnderline = true;
+		this.btPing.Label = global::Mono.Unix.Catalog.GetString ("Ping");
+		this.networkmanagerFix.Add (this.btPing);
+		global::Gtk.Fixed.FixedChild w11 = ((global::Gtk.Fixed.FixedChild)(this.networkmanagerFix [this.btPing]));
 		w11.X = 6;
 		w11.Y = 158;
 		// Container child networkmanagerFix.Gtk.Fixed+FixedChild

@@ -146,7 +146,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Button" id="pingButton">
+                  <widget class="Gtk.Button" id="btPing">
                     <property name="MemberName" />
                     <property name="WidthRequest">170</property>
                     <property name="CanFocus">True</property>

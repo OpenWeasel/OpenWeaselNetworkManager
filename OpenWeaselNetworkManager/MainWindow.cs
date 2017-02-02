@@ -28,6 +28,7 @@ public partial class MainWindow: Gtk.Window
 		//filechooserbutton1.SetCurrentFolder(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
 		//filechooserbutton1.SetCurrentFolder("/openweasel/logs");
 		btSSH.Clicked += btSSH_click;
+		btPing.Clicked += btPing_click;
 		Console.WriteLine("test");
 
 
@@ -35,7 +36,7 @@ public partial class MainWindow: Gtk.Window
 
 
 
-		static StringBuilder sortOutput = null;
+	//	static StringBuilder sortOutput = null;
 
 
 
@@ -48,7 +49,21 @@ public partial class MainWindow: Gtk.Window
 	*/
 	}
 
+	void btPing_click (object obj, EventArgs args)
+	{
+		System.Diagnostics.Process proc = new System.Diagnostics.Process ();
+		proc.EnableRaisingEvents = false;
+		proc.StartInfo.FileName = "ping";
+		proc.StartInfo.UseShellExecute = false;
+		proc.StartInfo.RedirectStandardOutput = true;
+		proc.StartInfo.Arguments = "-c 1 -W 1 google.com";
+		proc.Start ();
 
+		string data = proc.StandardOutput.ReadToEnd();
+		Console.WriteLine(data);
+		textviewConsoleOutput.Buffer.Text = data;
+
+	}
 
 	void btSSH_click (object obj, EventArgs args)
 	{
@@ -61,17 +76,17 @@ public partial class MainWindow: Gtk.Window
 		procSSH.StartInfo.RedirectStandardOutput = true;
 		//procSSH.StartInfo.Arguments = "-p password ssh -o StrictHostKeyChecking=no warlock@jamesweasel";
 
-		sortOutput = new StringBuilder("");
+	//	sortOutput = new StringBuilder("");
 
 		procSSH.Start();
 		procSSH.BeginOutputReadLine();
 
 
 	
-		/*
+
 		string dataSSH = procSSH.StandardOutput.ReadToEnd();
 		Console.WriteLine(dataSSH);
-		*/
+
 		//textviewConsoleOutput.Buffer.Text = dataSSH;
 
 	//	textviewConsoleOutput.Buffer.Text = procSSH.BeginOutputReadLine;
